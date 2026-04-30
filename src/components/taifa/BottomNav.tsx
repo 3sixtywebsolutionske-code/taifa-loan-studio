@@ -15,7 +15,7 @@ export const BottomNav = ({
   active: Screen;
   onNavigate: (s: Screen) => void;
 }) => (
-  <nav className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur border-t border-border">
+  <nav className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur border-t border-border rounded-b-[36px] overflow-hidden">
     <div className="flex items-center justify-around px-2 py-2 pb-3">
       {items.map(({ id, label, Icon }) => {
         const isActive = active === id || (id === "apply" && active === "apply");
