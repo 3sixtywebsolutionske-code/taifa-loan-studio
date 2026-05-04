@@ -4,64 +4,55 @@
 
 @layer base {
   :root {
-    /* Taifa brand */
-    --background: 75 18% 94%;            /* #F0F2EC off-white */
-    --foreground: 90 49% 12%;            /* #1E2D10 dark green */
+    /* Rosky Credit brand */
+    --background: 214 33% 97%;            /* #F4F6F9 */
+    --foreground: 211 67% 9%;             /* #0A1929 */
 
     --card: 0 0% 100%;
-    --card-foreground: 90 49% 12%;
+    --card-foreground: 211 67% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 90 49% 12%;
+    --popover-foreground: 211 67% 9%;
 
-    --primary: 80 56% 51%;               /* #8DC63F Taifa green */
-    --primary-foreground: 90 49% 12%;
-    --primary-glow: 80 60% 62%;
+    --primary: 209 98% 18%;               /* #012F59 navy */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 78 56% 89%;             /* #EAF4D3 light green */
-    --secondary-foreground: 90 49% 12%;
+    --accent-green: 123 60% 53%;          /* #42CF49 */
+    --accent-green-soft: 123 70% 94%;     /* #E6F9E7 */
 
-    --muted: 75 18% 94%;
-    --muted-foreground: 90 12% 38%;
+    --secondary: 123 70% 94%;
+    --secondary-foreground: 209 98% 18%;
 
-    --accent: 78 56% 89%;
-    --accent-foreground: 90 49% 12%;
+    --muted: 214 33% 97%;
+    --muted-foreground: 211 16% 42%;      /* #5A6B7E */
 
-    --destructive: 0 72% 51%;
+    --accent: 123 70% 94%;
+    --accent-foreground: 209 98% 18%;
+
+    --destructive: 0 70% 45%;
     --destructive-foreground: 0 0% 100%;
     --danger-soft: 0 80% 96%;
+    --danger-deep: 0 65% 29%;             /* #7A1A1A */
 
     --warning: 38 92% 50%;
+    --warning-soft: 45 100% 94%;
 
-    --border: 90 15% 88%;
-    --input: 90 15% 88%;
-    --ring: 80 56% 51%;
+    --success-deep: 132 73% 18%;          /* #0D4F1A */
+
+    --border: 213 35% 88%;                /* #D6E0EC */
+    --input: 213 35% 88%;
+    --ring: 209 98% 18%;
 
     --radius: 1rem;
 
-    --dark-bg: 90 49% 12%;               /* #1E2D10 */
+    --gradient-full: linear-gradient(135deg, #012F59 0%, #014a8a 50%, #1a7a3e 85%, #42CF49 100%);
+    --gradient-h: linear-gradient(90deg, #012F59, #42CF49);
+    --gradient-tint: linear-gradient(135deg, rgba(1,47,89,0.06), rgba(66,207,73,0.10));
+    --gradient-score: linear-gradient(90deg, #DC2626, #F59E0B, #42CF49);
 
-    --gradient-primary: linear-gradient(135deg, hsl(80 56% 51%), hsl(80 60% 62%));
-    --gradient-dark: linear-gradient(160deg, hsl(90 49% 12%), hsl(95 40% 18%));
-    --gradient-score: linear-gradient(90deg, hsl(0 72% 55%), hsl(38 92% 55%), hsl(80 56% 51%));
-
-    --shadow-card: 0 2px 14px -6px hsl(90 49% 12% / 0.08);
-    --shadow-tile: 0 6px 18px -10px hsl(80 56% 51% / 0.45);
-    --shadow-phone: 0 30px 80px -20px hsl(90 49% 12% / 0.45);
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark { /* unused */
-    --background: 90 49% 12%;
-    --foreground: 75 18% 94%;
+    --shadow-card: 0 2px 14px -6px rgba(10,25,41,0.10);
+    --shadow-tile: 0 8px 22px -12px rgba(1,47,89,0.45);
+    --shadow-phone: 0 30px 80px -20px rgba(10,25,41,0.45);
   }
 }
 
@@ -82,12 +73,18 @@
 @layer utilities {
   .scrollbar-hide::-webkit-scrollbar { display: none; }
   .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-  .bg-dark-brand { background: hsl(var(--dark-bg)); }
-  .text-dark-brand { color: hsl(var(--dark-bg)); }
-  .gradient-primary { background: var(--gradient-primary); }
-  .gradient-dark { background: var(--gradient-dark); }
+  .gradient-full { background: var(--gradient-full); }
+  .gradient-h { background: var(--gradient-h); }
+  .gradient-tint { background: var(--gradient-tint); }
   .gradient-score { background: var(--gradient-score); }
+  .text-navy { color: #012F59; }
+  .bg-navy { background-color: #012F59; }
+  .text-rosky-green { color: #42CF49; }
+  .bg-rosky-green { background-color: #42CF49; }
+  .bg-green-soft { background-color: #E6F9E7; }
+  .border-soft { border-color: #D6E0EC; }
   .shadow-card { box-shadow: var(--shadow-card); }
   .shadow-tile { box-shadow: var(--shadow-tile); }
   .shadow-phone { box-shadow: var(--shadow-phone); }
+  .text-mute { color: #5A6B7E; }
 }
