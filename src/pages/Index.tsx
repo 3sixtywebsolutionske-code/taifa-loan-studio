@@ -13,7 +13,7 @@ import { CrbStatusScreen } from "@/components/rosky/screens/CrbStatusScreen";
 import { HistoryScreen } from "@/components/rosky/screens/HistoryScreen";
 import { CompareScreen } from "@/components/rosky/screens/CompareScreen";
 import { ProfileScreen } from "@/components/rosky/screens/ProfileScreen";
-import type { ProductId, Screen } from "@/lib/rosky-types";
+import { PRODUCTS, type ProductId, type Screen } from "@/lib/rosky-types";
 
 const Index = () => {
   const [screen, setScreen] = useState<Screen>("home");
@@ -31,11 +31,8 @@ const Index = () => {
 
   const pickProduct = (p: ProductId) => {
     setProductId(p);
-    // ensure period is valid for product
-    import("@/lib/rosky-types").then(({ PRODUCTS }) => {
-      const periods = PRODUCTS[p].periods;
-      if (!periods.includes(period)) setPeriod(periods[1] ?? periods[0]);
-    });
+    const periods = PRODUCTS[p].periods;
+    if (!periods.includes(period)) setPeriod(periods[1] ?? periods[0]);
     navigate("apply");
   };
 
